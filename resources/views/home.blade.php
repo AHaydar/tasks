@@ -21,3 +21,11 @@
     </div>
 </div>
 @endsection
+
+
+<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="">
+    Ali Haydar <span class="caret"></span>
+</a>
+
+<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Ali Haydar <span class="caret"></span></a>

@@ -3,7 +3,7 @@
 @section('content')
         <div class="col-md-6">
             <div class="todolist">
-                <h1>Tasks</h1>
+                <h3>My List</h3>
                 <hr>
                 <ul>
                     <li>Take out the trash</li>
