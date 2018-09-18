@@ -6,9 +6,9 @@
                 <h3>My List</h3>
                 <hr>
                 <ul>
-                    <li>Take out the trash</li>
-                    <li>Buy bread</li>
-                    <li>Watch Atypical</li>
+                    @foreach($tasks as $task)
+                        <li>{{$task->title}}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>
