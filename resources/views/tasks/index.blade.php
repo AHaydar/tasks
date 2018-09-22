@@ -7,7 +7,12 @@
                 <hr>
                 <ul>
                     @foreach($tasks as $task)
-                        <li>{{$task->title}}</li>
+                    <li>
+                        <label>
+                            <input type="checkbox">
+                            {{$task->title}}
+                        </label>
+                    </li>
                     @endforeach
                 </ul>
             </div>
