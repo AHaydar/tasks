@@ -25,17 +25,17 @@
                         @foreach($tasks as $task)
                             @if($task->completed)
                                 <li>
-                                    <label>
-                                        <input type="checkbox" checked>
-                                        {{$task->title}}
-                                    </label>
+                                    <a href="/tasks/{{$task->id}}">
+                                        <strike>
+                                            {{$task->title}}
+                                        </strike>
+                                    </a>
                                 </li>
                             @else
                                 <li>
-                                    <label>
-                                        <input type="checkbox" >
+                                    <a href="/tasks/{{$task->id}}">
                                         {{$task->title}}
-                                    </label>
+                                    </a>
                                 </li>
                             @endif
 

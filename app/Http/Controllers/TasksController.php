@@ -25,7 +25,12 @@ class TasksController extends Controller
         $tasks = Task::all()
             ->where('user_id', $userId)
             ->sortBy('completed');
-        return view('tasks.index', ['tasks' => $tasks]);
+        return view('tasks.index', compact('tasks'));
+    }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show', compact('task'));
     }
 
     public function store(Request $request)
