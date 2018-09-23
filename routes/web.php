@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/tasks', 'TasksController@index');
+
+Route::post('/tasks', 'TasksController@store');

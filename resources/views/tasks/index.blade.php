@@ -5,17 +5,35 @@
             <div class="todolist">
                 <h3>My List</h3>
                 <hr>
-                <ul>
-                    @foreach($tasks as $task)
-                    <li>
-                        <label>
-                            <input type="checkbox">
-                            {{$task->title}}
-                        </label>
-                    </li>
-                    @endforeach
-                </ul>
+                <!-- New Task Form -->
+                <form action="/tasks" method="POST">
+                {{ csrf_field() }}
+
+                    <div>
+                        <div class="input-group">
+                            <input type="text" name="title" id="task-title" class="form-control">
+                            <button type="submit" class="btn btn-default btn-primary">
+                                Add Task
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="items">
+                    <ul>
+                        @foreach($tasks as $task)
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    {{$task->title}}
+                                </label>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
+        @include('layouts.errors')
 @endsection
 
