@@ -22,7 +22,9 @@ class TasksController extends Controller
     public function index()
     {
         $userId = Auth::user()->id;
-        $tasks = Task::all()->where('user_id', $userId);
+        $tasks = Task::all()
+            ->where('user_id', $userId)
+            ->sortBy('completed');
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
