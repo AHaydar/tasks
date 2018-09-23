@@ -22,3 +22,5 @@ Route::get('/tasks', 'TasksController@index');
 Route::get('/tasks/{task}', 'TasksController@show');
 
 Route::post('/tasks/add', 'TasksController@store');
+
+Route::post('/tasks/{task}/complete', 'TasksController@complete');

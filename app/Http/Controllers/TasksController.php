@@ -24,6 +24,7 @@ class TasksController extends Controller
         $userId = Auth::user()->id;
         $tasks = Task::all()
             ->where('user_id', $userId)
+            ->sortByDesc('updated_at')
             ->sortBy('completed');
         return view('tasks.index', compact('tasks'));
     }
@@ -44,6 +45,14 @@ class TasksController extends Controller
         $task->save();
 
         return redirect('/tasks');
+    }
 
+    public function complete(Task $task)
+    {
+        $task->completed = true;
+
+        $task->save();
+
+        return redirect('/tasks');
     }
 }

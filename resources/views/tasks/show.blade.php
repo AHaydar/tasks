@@ -4,11 +4,16 @@
     <div class="col-md-6">
         <div>
             <h3>{{$task->title}}</h3>
-            <div>
-                <button type="submit" class="btn btn-default btn-primary">
-                    Complete
-                </button>
-            </div>
+            <form action="/tasks/{{$task->id}}/complete" method="POST">
+                {{ csrf_field() }}
+                <div>
+                    @if(!$task->completed)
+                        <button type="submit" class="btn btn-default btn-primary">
+                            Complete
+                        </button>
+                    @endif
+                </div>
+            </form>
         </div>
     </div>
 
