@@ -6,7 +6,7 @@
                 <h3>My List</h3>
                 <hr>
                 <!-- New Task Form -->
-                <form action="/tasks" method="POST">
+                <form action="/tasks/add" method="POST">
                 {{ csrf_field() }}
 
                     <div>
@@ -23,12 +23,22 @@
                 <div class="items">
                     <ul>
                         @foreach($tasks as $task)
-                            <li>
-                                <label>
-                                    <input type="checkbox">
-                                    {{$task->title}}
-                                </label>
-                            </li>
+                            @if($task->completed)
+                                <li>
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        {{$task->title}}
+                                    </label>
+                                </li>
+                            @else
+                                <li>
+                                    <label>
+                                        <input type="checkbox" >
+                                        {{$task->title}}
+                                    </label>
+                                </li>
+                            @endif
+
                         @endforeach
                     </ul>
                 </div>

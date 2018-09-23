@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/tasks', 'TasksController@index');
 
-Route::post('/tasks', 'TasksController@store');
+Route::post('/tasks/add', 'TasksController@store');
