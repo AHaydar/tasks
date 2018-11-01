@@ -11,6 +11,10 @@ class LoginTest extends DuskTestCase
 {
 
     use DatabaseMigrations;
+
+    /**
+     * @throws \Throwable
+     */
     public function testLogin()
     {
         $user = factory(User::class)->create([
